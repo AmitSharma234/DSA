@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<conio.h>
+
+struct node{
+  int data;
+  struct node *next;
+  };
+
+
+  void enqueue(struct node*f,struct node*r,int val)
+  {
+    struct node *n=(struct node*)malloc(sizeof(struct node));
+    if(n==NULL)
+    {
+    printf("Queue is Full\n");
+    }
+    else{
+       n->data=val;
+       n->next=NULL;
+       if(f==NULL)
+       {
+	 f=r=NULL;
+	 }
+	 else{
+	  r->next=n;
+	  r=n;
+	  }
+       }
+  }
+
+
+
+  void tra(struct node*p)
+  {
+    while(p!=NULL)
+    {
+    printf("%d\n",&p->data);
+    p=p->next;
+
+    }
+    }
+
+
+
+  void main()
+{
+clrscr();
+   struct node *f=NULL;
+   struct node *r=NULL;
+  tra(f);
+
+   getch();
+   }
